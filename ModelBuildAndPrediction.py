@@ -9,7 +9,7 @@ import cv2
 import time
 
 #set location of the training data
-datadir = "C:\Indoor Scene Recognition\Images_test"
+datadir = "/kaggle/working/CNN-MIT-Indoor-Scene-Recognition/train/indoor-scenes-cvpr-2019/indoorCVPR_09/Images"
 
 #seperate the images data with categories in data_dir and list them here below
 categories = ["airport_inside","artstudio","auditorium","bakery","bar","bathroom","bedroom","bookstore"]
@@ -61,7 +61,7 @@ for dense_layer in dense_layers:
 #predicting
 #Pass the test image or image for prediction below 
 print('executing prediction')
-img_array = cv2.imread("C:/Indoor Scene Recognition/Images_test/test/bar_test_image.jpg",cv2.IMREAD_GRAYSCALE)
+img_array = cv2.imread("/kaggle/working/CNN-MIT-Indoor-Scene-Recognition/bar_test_image.jpg",cv2.IMREAD_GRAYSCALE)
 new_array = cv2.resize(img_array, (100,100))
 new_array=new_array.reshape(-1,100,100,1)
 prediction = model.predict([new_array])
